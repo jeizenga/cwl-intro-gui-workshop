@@ -31,11 +31,20 @@ steps:
       genome_graph: construct_graph/genome_graph
     out: [graph]
 
+  render_pretty_picture_of_graph:
+    run: render_pdf_from_dot.cwl
+    in:
+      dot_graph: generate_layout/graph
+    out: [rendered_graph_image]
+
 outputs:
-  my_graph: 
+  genome_graph:
     type: File
-    format: iana:text/vnd.graphviz 
-    outputSource: generate_layout/graph
+    outputSource: construct_graph/genome_graph
+  pretty_picture: 
+    type: File
+    format: iana:application/pdf 
+    outputSource: render_pretty_picture_of_graph/rendered_graph_image
 
 $namespaces:
   iana: https://www.iana.org/assignments/media-types/
