@@ -2,7 +2,7 @@
 cwlVersion: v1.0
 class: CommandLineTool
 
-label: Represent a genome graph in graphviz .dot format
+label: Create a pretty PDF
 
 #hints:
 #  DockerRequirement:
